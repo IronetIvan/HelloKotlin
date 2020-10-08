@@ -12,7 +12,10 @@ class MainActivity : AppCompatActivity() {
         //tiposDeDatos()
         //sentenciaIf()
         //sentenciaWhen()
-        arrays()
+        //arrays()
+        //maps()
+        //loops()
+        nullSafety()
     }
 
     private fun varibalesYConstantes() {
@@ -153,5 +156,83 @@ class MainActivity : AppCompatActivity() {
 
             //myArray.sort()
         }
+    }
+    fun maps(){
+
+        var myMap: Map<String, Int> = mapOf()
+        println(myMap)
+
+        myMap = mutableMapOf("Ivan" to 1, "Redondo" to 2)
+        println(myMap)
+
+        myMap["Olmo"]= 3
+        myMap.put("11",4)
+
+        println(myMap["Olmo"])
+
+        myMap.remove("Ivan")
+        println(myMap)
+    }
+    private fun loops(){
+        //Bucles
+
+        val myArray = listOf("Hola", "Bienvenidos al Array")
+        val myMap = mutableMapOf("Ivan" to 1, "Redondo" to 2, "Olmo" to 3)
+
+        //For
+        for (myString in myArray){
+            println(myString)
+        }
+        for (myElement in myMap){
+            println("${myElement.key}-${myElement.value}")
+        }
+        for (x in 0..10){
+            println(x)
+        }
+        for (x in 9 until 30){
+            println(x)
+        }
+        for (x in 0..10 step 2){
+            println(x)
+        }
+        for (x in 10 downTo 0  step 3){
+            println(x)
+        }
+
+        val myNumericArray = (0..20)
+        for (myNum in myNumericArray){
+            println(myNum)
+        }
+        // While
+        var x = 0
+        while (x < 10) {
+            println(x)
+            x++
+        }
+    }
+    /*
+    Seguridad contra nulos
+     */
+    fun nullSafety(){
+        var myString = "Ivan"
+        //myString = null esto da error de compilación
+        println(myString)
+        // Variable null safety
+        var mySafetyString:String? = "Ivan null safety"
+        mySafetyString = null
+        println(mySafetyString)
+
+        //mySafetyString = "Kotlin"
+        //println(mySafetyString)
+
+        //println(mySafetyString!!)
+        /*if (mySafetyString != null){
+            println(mySafetyString!!)
+        }else{
+            println(mySafetyString)
+        }*/
+
+        //Safe call
+        print(mySafetyString?.length)
     }
 }
