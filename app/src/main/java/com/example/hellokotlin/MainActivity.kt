@@ -15,7 +15,8 @@ class MainActivity : AppCompatActivity() {
         //arrays()
         //maps()
         //loops()
-        nullSafety()
+        //nullSafety()
+        funciones()
     }
 
     private fun varibalesYConstantes() {
@@ -234,5 +235,40 @@ class MainActivity : AppCompatActivity() {
 
         //Safe call
         print(mySafetyString?.length)
+    }
+    //Funciones con Kotlin
+    fun funciones(){
+        sayHello()
+        sayHello()
+        sayHello()
+        sayMyName("Ivan")
+        sayMyName("Raul")
+        sayMyName("Noelia")
+
+        sayMyNameAndAge("Ivan",22)
+
+        var sum = sumNumeros(10,5)
+        println(sum)
+        println(sumNumeros(15,8))
+        println(sumNumeros(10,sumNumeros(5,5)))
+    }
+    //Funcion simple
+    fun sayHello(){
+        println("Hola!!")
+    }
+
+    //Funciones con parametros de entrada
+    fun sayMyName(nombre : String){
+        println("Hola, mi nombre es $nombre")
+    }
+    //Funciones con más de un parametro de entrada
+    fun sayMyNameAndAge(nombre : String, edad : Int){
+        println("Hola, mi nombre es $nombre y mi edad es $edad")
+    }
+
+    //Funciones con valor de retorno
+    fun sumNumeros(firstNumber: Int, twoNumber:Int) : Int{
+        val sum: Int = firstNumber+ twoNumber
+        return sum
     }
 }
