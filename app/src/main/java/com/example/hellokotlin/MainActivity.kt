@@ -16,7 +16,8 @@ class MainActivity : AppCompatActivity() {
         //maps()
         //loops()
         //nullSafety()
-        funciones()
+        //funciones()
+        clases()
     }
 
     private fun varibalesYConstantes() {
@@ -270,5 +271,15 @@ class MainActivity : AppCompatActivity() {
     fun sumNumeros(firstNumber: Int, twoNumber:Int) : Int{
         val sum: Int = firstNumber+ twoNumber
         return sum
+    }
+    //Clases Kotlin
+    fun clases(){
+        val ivan = Programmer("Ivan",22, arrayOf(Programmer.Language.KOTLIN,Programmer.Language.SWIFT))
+        println(ivan.name)
+        ivan.code()
+        val noelia = Programmer("Noelia",20, arrayOf(Programmer.Language.JAVA), arrayOf(ivan))
+        noelia.code()
+
+        println("${noelia.fiends?.first()?.name} es amigo de ${noelia.name}")
     }
 }
